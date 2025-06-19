@@ -6,13 +6,13 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navigation = [
-    { name: 'Home', href: '#' },
-    { name: 'About Us', href: '#', hasDropdown: true },
-    { name: 'Tours', href: '#' },
-    { name: 'Travel Info', href: '#' },
-    { name: 'Awards', href: '#' },
-    { name: 'Why Us', href: '#' },
-    { name: 'Contact Us', href: '#' },
+    { name: 'Home', href: '/' },
+    { name: 'About Us', href: '/about-us' },
+    { name: 'Tours', href: '/tours' },
+    { name: 'Travel Info', href: '/travel-info' },
+    { name: 'Awards', href: '/awards' },
+    { name: 'Why Us', href: '/why-us' },
+    { name: 'Contact Us', href: '/contact-us' },
   ];
 
   return (
@@ -23,10 +23,10 @@ export default function Header() {
           <div className="flex-shrink-0">
             <div className="flex items-center">
               <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">BTC</span>
+                <span className="text-white font-bold text-lg">LWP</span>
               </div>
               <div className="ml-3">
-                <h1 className="text-xl font-bold text-gray-900">Bhutan Travel Center</h1>
+                <h1 className="text-xl font-bold text-gray-900">LWP Travel & Tours</h1>
                 <p className="text-xs text-gray-600">Local Experts</p>
               </div>
             </div>
@@ -35,34 +35,21 @@ export default function Header() {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
             {navigation.map((item) => (
-              <div key={item.name} className="relative group">
-                <a
-                  href={item.href}
-                  className="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors duration-200"
-                >
-                  {item.name}
-                </a>
-                {item.hasDropdown && (
-                  <div className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                    <div className="py-1">
-                      <a
-                        href="#"
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                      >
-                        Sustainable Tourism
-                      </a>
-                    </div>
-                  </div>
-                )}
-              </div>
+              <a
+                key={item.name}
+                href={item.href}
+                className="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors duration-200"
+              >
+                {item.name}
+              </a>
             ))}
           </nav>
 
           {/* CTA Button */}
           <div className="hidden md:flex items-center">
-            <button className="bg-blue-600 text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-blue-700 transition-colors duration-200">
+            <a href="/contact-us" className="bg-blue-600 text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-blue-700 transition-colors duration-200">
               Get Started
-            </button>
+            </a>
           </div>
 
           {/* Mobile menu button */}
@@ -94,9 +81,9 @@ export default function Header() {
                 </a>
               ))}
               <div className="pt-4">
-                <button className="w-full bg-blue-600 text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-blue-700 transition-colors duration-200">
+                <a href="/contact-us" className="w-full block text-center bg-blue-600 text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-blue-700 transition-colors duration-200">
                   Get Started
-                </button>
+                </a>
               </div>
             </div>
           </div>

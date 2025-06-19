@@ -11,18 +11,14 @@ import Footer from "./components/Footer";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white">
-      <Header />
-      <main>
-        <HeroSection />
-        <TravelThemes />
-        <SmallGroupTours />
-        <WhyChooseUs />
-        <BookingProcess />
-        <Testimonials />
-        <Gallery />
-      </main>
-      <Footer />
+    <div>
+      <HeroSection />
+      <TravelThemes />
+      <SmallGroupTours />
+      <WhyChooseUs />
+      <BookingProcess />
+      <Testimonials />
+      <Gallery />
     </div>
   );
 }
